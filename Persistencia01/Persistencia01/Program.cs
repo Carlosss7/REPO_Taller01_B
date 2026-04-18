@@ -97,12 +97,34 @@ namespace Persistencia01
 		{
 		    Console.WriteLine("Error: No se encontró 'avatar.jpg' en la carpeta DATOSIUJO.");
 		}
-		            
-		            
 		
-		            Console.WriteLine("\n---------------------------");
-		            Console.Write("Press any key to continue . . . ");
-		            Console.ReadKey(true);
+			// --- DESAFÍO 3: El Buscador de Archivos Pesados ---
+		Console.WriteLine("\n--- Desafío 3: Limpieza de Archivos Pesados ---");
+		
+		// 1. Obtenemos la lista de todos los archivos en REPORTES
+		string[] archivosEnReportes = Directory.GetFiles(rutaReportes);
+		
+		foreach (string rutaArchivo in archivosEnReportes)
+		{
+		    // 2. Creamos un objeto FileInfo para cada archivo para ver su peso
+		    FileInfo informacion = new FileInfo(rutaArchivo);
+		
+		    // 3. Comparamos la propiedad .Length (el tamaño en bytes)
+		    // 5KB = 5120 bytes (5 * 1024)
+		    if (informacion.Length > 5120)
+		    {
+		        Console.WriteLine("Borrando {informacion.Name} ({informacion.Length} bytes) por ser mayor a 5KB...");
+		        informacion.Delete();
+		    }
+		    else
+		    {
+		        Console.WriteLine("Conservando {informacion.Name} - Tamaño aceptable.");
+		    }
+		}
+		            
+		      Console.WriteLine("\n---------------------------");
+		      Console.Write("Press any key to continue . . . ");
+		      Console.ReadKey(true);
 		        }
 		    }
 		}
