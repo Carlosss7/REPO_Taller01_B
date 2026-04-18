@@ -3,3 +3,8 @@ C:\Users\usuario\Desktop\TallerSeccionB\Persistencia01\Persistencia01\bin\Debug\
 C:\Users\usuario\Desktop\TallerSeccionB\Persistencia01\Persistencia01\obj\Debug\Persistencia01.csprojResolveAssemblyReference.cache
 C:\Users\usuario\Desktop\TallerSeccionB\Persistencia01\Persistencia01\obj\Debug\Persistencia01.exe
 C:\Users\usuario\Desktop\TallerSeccionB\Persistencia01\Persistencia01\obj\Debug\Persistencia01.pdb
+C:\Users\carlo\Downloads\REPO_Taller01_B-main\REPO_Taller01_B\Persistencia01\Persistencia01\obj\Debug\Persistencia01.csprojResolveAssemblyReference.cache
+C:\Users\carlo\Downloads\REPO_Taller01_B-main\REPO_Taller01_B\Persistencia01\Persistencia01\obj\Debug\Persistencia01.exe
+C:\Users\carlo\Downloads\REPO_Taller01_B-main\REPO_Taller01_B\Persistencia01\Persistencia01\obj\Debug\Persistencia01.pdb
+C:\Users\carlo\Downloads\REPO_Taller01_B-main\REPO_Taller01_B\Persistencia01\Persistencia01\bin\Debug\Persistencia01.exe
+C:\Users\carlo\Downloads\REPO_Taller01_B-main\REPO_Taller01_B\Persistencia01\Persistencia01\bin\Debug\Persistencia01.pdb

@@ -32,10 +32,47 @@ namespace Persistencia01
 			   	Console.WriteLine("Directorio creado correctamente");
 			   }
 			
-			//
-			
-			Console.Write("Press any key to continue . . . ");
-			Console.ReadKey(true);
-		}
-	}
+			// --- DESAFÍO 1: El Validador de Seguridad ---
+            Console.WriteLine("\n--- Desafío 1: Validador ---");
+            Console.Write("Ingrese la cadena (usuario;clave): ");
+            string entrada = Console.ReadLine();
+
+            // Dividimos la cadena usando el separador ';'
+            string[] partes = entrada.Split(';');
+
+            // Verificamos que existan al menos dos partes (usuario y clave)
+            if (partes.Length >= 2)
+            {
+                string usuario = partes[0];
+                string clave = partes[1];
+
+                // Si la clave contiene "123", guardamos el aviso
+                if (clave.Contains("123"))
+                {
+                    string rutaSeguridad = Path.Combine(rutaReportes, "seguridad.txt");
+                    
+                    // Usamos StreamWriter para escribir el archivo
+                    // El parámetro 'true' es para que no borre lo que ya existe (Append)
+                    using (StreamWriter sw = new StreamWriter(rutaSeguridad, true))
+                    {
+                        sw.WriteLine("[{DateTime.Now}] Clave Débil detectada para el usuario: {usuario}");
+                    }
+                    
+                    Console.WriteLine("¡Alerta! Clave débil detectada y registrada en seguridad.txt");
+                }
+                else
+                {
+                    Console.WriteLine("Clave segura. No se generaron avisos.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error: Formato incorrecto. Debe ser 'usuario;clave'.");
+            }
+
+            Console.WriteLine("\n---------------------------");
+            Console.Write("Press any key to continue . . . ");
+            Console.ReadKey(true);
+        }
+    }
 }
