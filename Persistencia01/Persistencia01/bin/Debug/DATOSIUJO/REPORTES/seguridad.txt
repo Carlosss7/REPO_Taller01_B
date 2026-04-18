@@ -1,0 +1,1 @@
+[{DateTime.Now}] Clave Débil detectada para el usuario: {usuario}

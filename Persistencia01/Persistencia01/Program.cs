@@ -69,10 +69,42 @@ namespace Persistencia01
             {
                 Console.WriteLine("Error: Formato incorrecto. Debe ser 'usuario;clave'.");
             }
-
-            Console.WriteLine("\n---------------------------");
-            Console.Write("Press any key to continue . . . ");
-            Console.ReadKey(true);
-        }
-    }
-}
+            
+	        // --- DESAFÍO 2: El Clonador de Imágenes (FileStream) ---
+			Console.WriteLine("\n--- Desafío 2: Clonador ---");
+	
+			// Definimos los nombres exactos que pide el reto
+			string archivoOrigen = Path.Combine(rutaRaiz, "avatar.jpg"); 
+			string archivoDestino = Path.Combine(rutaReportes, "respaldo.jpg");
+		
+			if (File.Exists(archivoOrigen))
+			{
+		   	 // Usamos FileStream para la copia byte a byte
+		    using (FileStream fsEntrada = new FileStream(archivoOrigen, FileMode.Open, FileAccess.Read))
+		    using (FileStream fsSalida = new FileStream(archivoDestino, FileMode.Create, FileAccess.Write))
+		    {
+		        byte[] buffer = new byte[1024]; // La "cubeta" para los bytes
+		        int cantidadLeida;
+		
+		        while ((cantidadLeida = fsEntrada.Read(buffer, 0, buffer.Length)) > 0)
+		        {
+		            fsSalida.Write(buffer, 0, cantidadLeida);
+		        }
+		    }
+		    Console.WriteLine("Reto cumplido: avatar.jpg copiado a respaldo.jpg byte a byte.");
+		}
+		else
+		{
+		    Console.WriteLine("Error: No se encontró 'avatar.jpg' en la carpeta DATOSIUJO.");
+		}
+		            
+		            
+		
+		            Console.WriteLine("\n---------------------------");
+		            Console.Write("Press any key to continue . . . ");
+		            Console.ReadKey(true);
+		        }
+		    }
+		}
+	
+	           
